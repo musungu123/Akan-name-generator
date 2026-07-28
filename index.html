@@ -1,63 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AKAN NAME GENERATOR</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <header class="header">
         <span class="badge">Ghanian Heritage</span>
         <p class="description">
-        In Akan culture, children are traditionally named after the day of the week they are born. 
-        Enter your details below to calculate your birth day and discover your authentic Akan name!
-      </p>
+            In Akan culture, children are traditionally named after the day of the week they are born.
+            Enter your details below to calculate your birth day and discover your authentic Akan name!
+        </p>
     </header>
     <main class="container">
         <section class="card">
             <form id="akan-form">
                 <div class="form-grid">
+                    <!--day Input-->
                     <div class="input-group">
                         <label for="day">Day Of Birth </label>
-                        <input 
-                        type="number" 
-                        id="day" 
-                        name="day"
-                        placeholder="DD (e.g. 18)"
-                        min="1"
-                        max="31"
-                        required 
-                        />
+                        <input type="number" id="day" name="day" placeholder="DD" min="1" max="31" required />
                     </div>
+                    <!--Month Input-->
                     <div class="input-group">
                         <label for="month">Month Of Birth </label>
-                        <input 
-                        type="number" 
-                        id="month" 
-                        name="month"
-                        placeholder="MM (e.g. 12)"
-                        min="1"
-                        max="12"
-                        required 
-                        />
+                        <input type="number" id="month" name="month" placeholder="MM" min="1" max="12" required />
                     </div>
+                    <!--Year Input-->
                     <div class="input-group">
                         <label for="year">Year Of Birth </label>
-                        <input 
-                        type="number" 
-                        id="year" 
-                        name="year"
-                        placeholder="YY (e.g. 1918)"
-                        min="1800"
-                        max="2026"
-                        required 
-                        />
+                        <input type="number" id="year" name="year" placeholder="YY" min="1800" max="2026" required />
                     </div>
+                    <!--Gender Input-->
+                    <fieldset class="form-group gender-group">
+                        <legend>Gender</legend>
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="male" required />
+                            <span>Male</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="female" required />
+                            <span>Female</span>
+                        </label>
+                    </fieldset>
                 </div>
+                <button type="submit" id="submitBtn" class="btn-primary">
+                    <span>Find My Akan Name</span>
+                </button>
             </form>
         </section>
     </main>
     <script src="./script.js"></script>
 </body>
+
 </html>

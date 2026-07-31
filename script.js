@@ -16,12 +16,12 @@ const maleNames = [
     "Kofi",
     "kwame",
 ];
-const dayOfTheWeek = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
+const femaleName = [
+    "Akosua",
+    "Adwoa",
+    "Abenaa",
+    "Akua",
+    "Yaa",
+    "Afua",
+    "Ama",
 ];

@@ -8,6 +8,15 @@ const dayOfTheWeek = [
     "Saturday",
 ];
 const maleNames = [
+    "Kwasi",
+    "Kwadwo",
+    "Kwabena",
+    "Kwaku",
+    "Yaw",
+    "Kofi",
+    "kwame",
+];
+const dayOfTheWeek = [
     "Sunday",
     "Monday",
     "Tuesday",

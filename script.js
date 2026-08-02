@@ -1,5 +1,3 @@
-
-// Data mapping: Index corresponds to calculated day (0 = Sunday, 1 = Monday, ..., 6 = Saturday)
 const daysOfWeek = [
   "Sunday",
   "Monday",
@@ -31,7 +29,7 @@ const femaleAkanNames = [
 ];
 
 // DOM Elements
-const akanForm = document.getElementById("akanForm");
+const akanForm = document.getElementById("formFormat");
 const resultContainer = document.getElementById("resultContainer");
 const resultName = document.getElementById("resultName");
 const resultDetails = document.getElementById("resultDetails");
@@ -109,7 +107,7 @@ function calculateDayOfWeek(day, month, year) {
 /**
  * Form Submit Handler
  */
-akanForm.addEventListener("submit", function (event) {
+formFormat.addEventListener("submit", function (event) {
   event.preventDefault();
 
   // Retrieve form values
@@ -142,7 +140,7 @@ akanForm.addEventListener("submit", function (event) {
   resultDetails.textContent = `You were born on a ${bornDay}. In Ghanaian culture, your name is ${assignedName}!`;
 
   // UI state transition
-  akanForm.style.display = "none";
+  formFormat.style.display = "none";
   resultContainer.classList.remove("hidden");
 });
 
@@ -150,7 +148,7 @@ akanForm.addEventListener("submit", function (event) {
  * Reset Handler to reset inputs and transition back to form
  */
 resetBtn.addEventListener("click", function () {
-  akanForm.reset();
+  formFormat.reset();
   resultContainer.classList.add("hidden");
   akanForm.style.display = "block";
 });

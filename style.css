@@ -1,0 +1,206 @@
+/* Universal Reset & Typography */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background-color: #0d1117;
+  background-image: 
+    radial-gradient(circle at 15% 20%, rgba(217, 119, 6, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(185, 28, 28, 0.12) 0%, transparent 45%);
+  color: #f3f4f6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+/* Outer Container */
+.container {
+  width: 100%;
+  max-width: 620px;
+}
+
+/* Header Component */
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.kente-accent {
+  height: 5px;
+  width: 90px;
+  margin: 0 auto 1.25rem auto;
+  background: linear-gradient(90deg, #b91c1c 0%, #d97706 50%, #047857 100%);
+  border-radius: 999px;
+}
+
+.badge {
+  background: rgba(217, 119, 6, 0.15);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  padding: 0.3rem 0.85rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.app-header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0.85rem 0 0.5rem 0;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Main Form Card */
+.card {
+  background: rgba(22, 27, 34, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  padding: 2.25rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  margin-bottom: 2rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #e5e7eb;
+}
+
+.input-group input[type="number"] {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: #0d1117;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.25s ease-in-out;
+}
+
+.input-group input[type="number"]:focus {
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+}
+
+/* Radio Button Styling */
+.radio-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.radio-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  background: #0d1117;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+
+.radio-card:hover {
+  border-color: rgba(245, 158, 11, 0.5);
+  background: rgba(245, 158, 11, 0.03);
+}
+
+.radio-card input {
+  display: none;
+}
+
+.radio-custom {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #6b7280;
+  border-radius: 50%;
+  display: inline-block;
+  transition: all 0.25s ease-in-out;
+}
+
+.radio-card input:checked + .radio-custom {
+  border-color: #f59e0b;
+  background-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25);
+}
+
+.radio-card input:checked ~ .label-text {
+  color: #f59e0b;
+  font-weight: 700;
+}
+
+/* Primary Button */
+.btn-primary {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 0.95rem;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #0d1117;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.25s ease-in-out;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px Here are the common ways to structure CSS without using the `:root` selector, depending on what you are trying to achieve:
+
+### 1. Scope variables to `body` or `html`
+If you still want CSS custom properties (variables) but don't want to use `:root`, you can attach them directly to the `html` or `body` tag:
+
+```css
+body {
+  /* Design Tokens */
+  --primary-color: #2563eb;
+  --text-color: #1f2937;
+  --bg-color: #f8fafc;
+  --spacing-md: 1rem;
+
+  /* Base Styles */
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: var(--spacing-md);
+}

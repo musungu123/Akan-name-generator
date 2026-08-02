@@ -10,6 +10,7 @@
 
 <body>
     <header class="header">
+        <div class="accent"></div>
         <span class="badge">Ghanian Heritage</span>
         <p class="description">
             In Akan culture, children are traditionally named after the day of the week they are born.
@@ -18,7 +19,7 @@
     </header>
     <main class="container">
         <section class="card">
-            <form id="akan-form">
+            <form id="akanForm">
                 <div class="form-grid">
                     <!--day Input-->
                     <div class="input-group">
@@ -52,7 +53,38 @@
                     <span>Find My Akan Name</span>
                 </button>
             </form>
-        </section>
+            <!-- Output Display Section -->
+      <div id="resultContainer" class="result-container hidden">
+        <div class="result-badge">Your Akan Name</div>
+        <h2 id="resultName" class="result-name">--</h2>
+        <p id="resultDetails" class="result-details">--</p>
+        <button type="button" id="resetBtn" class="btn-secondary">Calculate Another Name</button>
+      </div>
+    </section>
+    <!-- Visual Cultural Reference Table -->
+    <section class="reference-section">
+      <h3>Akan Naming Tradition Quick Reference</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Male Name</th>
+              <th>Female Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Sunday</td><td>Kwasi</td><td>Akosua</td></tr>
+            <tr><td>Monday</td><td>Kwadwo</td><td>Adwoa</td></tr>
+            <tr><td>Tuesday</td><td>Kwabena</td><td>Abenaa</td></tr>
+            <tr><td>Wednesday</td><td>Kwaku</td><td>Akua</td></tr>
+            <tr><td>Thursday</td><td>Yaw</td><td>Yaa</td></tr>
+            <tr><td>Friday</td><td>Kofi</td><td>Afua</td></tr>
+            <tr><td>Saturday</td><td>Kwame</td><td>Ama</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
     </main>
     <script src="./script.js"></script>
 </body>

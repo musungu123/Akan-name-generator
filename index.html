@@ -12,14 +12,15 @@
     <header class="header">
         <div class="accent"></div>
         <span class="badge">Ghanian Heritage</span>
+        <h1>Akan name generator</h1>
         <p class="description">
             In Akan culture, children are traditionally named after the day of the week they are born.
             Enter your details below to calculate your birth day and discover your authentic Akan name!
         </p>
     </header>
     <main class="container">
-        <section class="card">
-            <form id="akanForm">
+        <section class="section-card">
+            <form id="form-format">
                 <div class="form-grid">
                     <!--day Input-->
                     <div class="input-group">
@@ -39,14 +40,18 @@
                     <!--Gender Input-->
                     <fieldset class="form-group gender-group">
                         <legend>Gender</legend>
+                        <div class="radio-group">
                         <label class="radio-label">
                             <input type="radio" name="gender" value="male" required />
-                            <span>Male</span>
+                            <span class="radio-custom"></span>
+                            <span class="label-text">Male</span>
                         </label>
                         <label class="radio-label">
                             <input type="radio" name="gender" value="female" required />
-                            <span>Female</span>
+                            <span class="radio-custom"></span>
+                            <span class="label-text">Female</span>
                         </label>
+                        </div>
                     </fieldset>
                 </div>
                 <button type="submit" id="submitBtn" class="btn-primary">

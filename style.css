@@ -40,13 +40,15 @@ body {
 }
 
 /* Header Styling */
-.app-header {
+.header {
   text-align: center;
   margin-bottom: 2rem;
   position: relative;
+  width: 100%;
+  max-width: 640px;
 }
 
-.kente-accent {
+.accent {
   height: 4px;
   width: 100px;
   margin: 0 auto 1.5rem auto;
@@ -66,7 +68,7 @@ body {
   letter-spacing: 0.05em;
 }
 
-.app-header h1 {
+.header h1 {
   font-size: 2.25rem;
   font-weight: 800;
   margin: 0.75rem 0;
@@ -82,7 +84,7 @@ body {
 }
 
 /* Main Card */
-.card {
+.section-card {
   background: var(--card-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -135,7 +137,7 @@ body {
   gap: 1rem;
 }
 
-.radio-card {
+.radio-label {
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -147,11 +149,11 @@ body {
   transition: var(--transition);
 }
 
-.radio-card:hover {
+.radio-label:hover {
   border-color: rgba(245, 158, 11, 0.5);
 }
 
-.radio-card input {
+.radio-label input {
   display: none;
 }
 
@@ -165,13 +167,13 @@ body {
   transition: var(--transition);
 }
 
-.radio-card input:checked + .radio-custom {
+.radio-label input:checked + .radio-custom {
   border-color: var(--primary-gold);
   background-color: var(--primary-gold);
   box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
 }
 
-.radio-card input:checked ~ .label-text {
+.radio-label input:checked ~ .label-text {
   color: var(--primary-gold);
   font-weight: 700;
 }

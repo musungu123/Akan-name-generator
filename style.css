@@ -1,4 +1,19 @@
-/* Universal Reset & Typography */
+/* Custom CSS Variables - Ghanaian Kente Inspired Palette */
+:root {
+  --primary-gold: #f59e0b;
+  --primary-gold-hover: #d97706;
+  --accent-red: #dc2626;
+  --accent-green: #059669;
+  --bg-dark: #0f172a;
+  --card-bg: rgba(30, 41, 59, 0.7);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --glass-glow: rgba(245, 158, 11, 0.15);
+  --radius: 16px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,11 +22,11 @@
 }
 
 body {
-  background-color: #0d1117;
+  background-color: var(--bg-dark);
   background-image: 
-    radial-gradient(circle at 15% 20%, rgba(217, 119, 6, 0.12) 0%, transparent 45%),
-    radial-gradient(circle at 85% 80%, rgba(185, 28, 28, 0.12) 0%, transparent 45%);
-  color: #f3f4f6;
+    radial-gradient(circle at 10% 20%, rgba(245, 158, 11, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(220, 38, 38, 0.08) 0%, transparent 40%);
+  color: var(--text-main);
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -19,63 +34,62 @@ body {
   padding: 2rem 1rem;
 }
 
-/* Outer Container */
 .container {
   width: 100%;
-  max-width: 620px;
+  max-width: 640px;
 }
 
-/* Header Component */
+/* Header Styling */
 .app-header {
   text-align: center;
   margin-bottom: 2rem;
+  position: relative;
 }
 
 .kente-accent {
-  height: 5px;
-  width: 90px;
-  margin: 0 auto 1.25rem auto;
-  background: linear-gradient(90deg, #b91c1c 0%, #d97706 50%, #047857 100%);
-  border-radius: 999px;
+  height: 4px;
+  width: 100px;
+  margin: 0 auto 1.5rem auto;
+  background: linear-gradient(90deg, var(--accent-red), var(--primary-gold), var(--accent-green));
+  border-radius: 2px;
 }
 
 .badge {
-  background: rgba(217, 119, 6, 0.15);
-  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--primary-gold);
   border: 1px solid rgba(245, 158, 11, 0.3);
-  padding: 0.3rem 0.85rem;
+  padding: 0.25rem 0.75rem;
   border-radius: 50px;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
 }
 
 .app-header h1 {
-  font-size: 2.2rem;
+  font-size: 2.25rem;
   font-weight: 800;
-  margin: 0.85rem 0 0.5rem 0;
-  color: #ffffff;
-  letter-spacing: -0.02em;
+  margin: 0.75rem 0;
+  letter-spacing: -0.025em;
 }
 
 .description {
-  color: #9ca3af;
+  color: var(--text-muted);
   font-size: 0.95rem;
   line-height: 1.6;
-  max-width: 500px;
+  max-width: 520px;
   margin: 0 auto;
 }
 
-/* Main Form Card */
+/* Main Card */
 .card {
-  background: rgba(22, 27, 34, 0.8);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 18px;
-  padding: 2.25rem;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 0 30px var(--glass-glow);
   margin-bottom: 2rem;
 }
 
@@ -91,30 +105,30 @@ body {
 
 .input-group label {
   display: block;
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #e5e7eb;
+  color: var(--text-main);
 }
 
 .input-group input[type="number"] {
   width: 100%;
-  padding: 0.85rem 1rem;
-  background: #0d1117;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.875rem 1rem;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--border-color);
   border-radius: 10px;
-  color: #ffffff;
+  color: var(--text-main);
   font-size: 1rem;
   outline: none;
-  transition: all 0.25s ease-in-out;
+  transition: var(--transition);
 }
 
 .input-group input[type="number"]:focus {
-  border-color: #f59e0b;
+  border-color: var(--primary-gold);
   box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
 }
 
-/* Radio Button Styling */
+/* Custom Radio Buttons */
 .radio-group {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -125,17 +139,16 @@ body {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 0.85rem 1rem;
-  background: #0d1117;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.875rem 1rem;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--border-color);
   border-radius: 10px;
   cursor: pointer;
-  transition: all 0.25s ease-in-out;
+  transition: var(--transition);
 }
 
 .radio-card:hover {
   border-color: rgba(245, 158, 11, 0.5);
-  background: rgba(245, 158, 11, 0.03);
 }
 
 .radio-card input {
@@ -145,30 +158,31 @@ body {
 .radio-custom {
   width: 18px;
   height: 18px;
-  border: 2px solid #6b7280;
+  border: 2px solid var(--text-muted);
   border-radius: 50%;
   display: inline-block;
-  transition: all 0.25s ease-in-out;
+  position: relative;
+  transition: var(--transition);
 }
 
 .radio-card input:checked + .radio-custom {
-  border-color: #f59e0b;
-  background-color: #f59e0b;
-  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25);
+  border-color: var(--primary-gold);
+  background-color: var(--primary-gold);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
 }
 
 .radio-card input:checked ~ .label-text {
-  color: #f59e0b;
+  color: var(--primary-gold);
   font-weight: 700;
 }
 
-/* Primary Button */
+/* Buttons */
 .btn-primary {
   width: 100%;
   margin-top: 1.5rem;
-  padding: 0.95rem;
-  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-  color: #0d1117;
+  padding: 1rem;
+  background: var(--primary-gold);
+  color: #000;
   font-weight: 700;
   font-size: 1rem;
   border: none;
@@ -178,29 +192,132 @@ body {
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  transition: all 0.25s ease-in-out;
+  transition: var(--transition);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+  background: var(--primary-gold-hover);
   transform: translateY(-2px);
-  box-shadow: 0 10px Here are the common ways to structure CSS without using the `:root` selector, depending on what you are trying to achieve:
+  box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.3);
+}
 
-### 1. Scope variables to `body` or `html`
-If you still want CSS custom properties (variables) but don't want to use `:root`, you can attach them directly to the `html` or `body` tag:
+.btn-secondary {
+  margin-top: 1.25rem;
+  padding: 0.625rem 1.25rem;
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
 
-```css
-body {
-  /* Design Tokens */
-  --primary-color: #2563eb;
-  --text-color: #1f2937;
-  --bg-color: #f8fafc;
-  --spacing-md: 1rem;
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-main);
+}
 
-  /* Base Styles */
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: system-ui, -apple-system, sans-serif;
-  margin: 0;
-  padding: var(--spacing-md);
+/* Result Section */
+.result-container {
+  text-align: center;
+  padding-top: 1rem;
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.result-container.hidden {
+  display: none;
+}
+
+.result-badge {
+  color: var(--accent-green);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.result-name {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--primary-gold);
+  letter-spacing: -0.02em;
+}
+
+.result-details {
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Reference Table */
+.reference-section {
+  background: rgba(15, 23, 42, 0.4);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.reference-section h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+th, td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+th {
+  color: var(--primary-gold);
+  font-weight: 600;
+}
+
+td {
+  color: var(--text-muted);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .full-width {
+    grid-column: span 1;
+  }
+  .app-header h1 {
+    font-size: 1.75rem;
+  }
 }
